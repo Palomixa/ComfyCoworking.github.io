@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Reservas</title>
+    <link rel="stylesheet" href="consultarReserva.css">
+    <link rel="stylesheet" href="/modificarReserva/modificarReserva.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/l10n/es.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="consultarReserva.js" defer></script>
+</head>
+<body>
+    <nav id="bnavegacion">
+        <ul class="listado">
+            <li>
+                <a href="/Index/ComfyCoworking.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/nuevaReserva/nuevaReserva.html">Nueva Reserva</a>
+            </li>
+            <li>
+                <a href="/consultarReserva/consultarReserva.html">Consultar Reserva</a>     
+            </li>
+            <li>
+                <a>Ubicación</a>
+                <ul class="Contenido">
+                    <li><a href="/PrismaSalamanca/PrismaSalamanca.html">Edificio Prisma Salamanca</a></li>
+                    <li><a href="/TorreAvance/TorreAvance.html">Torre Avance</a></li>
+                    <li><a href="/CentroNegociosHorizonte/CentroNegociosHorizonte.html">Centro de negocios Horizonte</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="cerrarSesion();">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Lista de reservas</h1>
+        <table id="tablaReservas">
+            <thead>
+                <tr>
+                    <th>Edificio</th>
+                    <th>Sala</th>
+                    <th>Capacidad</th>
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+    <div id="modificarReservaModal" class="modal">
+        <div class="contenidoModal">
+        <div class="modal-background"></div>
+            <h1>Modificar Reserva</h1>
+            <form id="formularioModificarReserva">
+                <div class="formEdificio">
+                    <label for="edificiosMod" class="labelEdificio">¿Donde quieres trabajar hoy?</label>
+                    <select id="edificiosMod" class="edificios" name="edificiosMod" required>
+                        <option value="" disabled selected>Selecciona el edificio</option>
+                        
+                    </select>
+                </div>
+                <div class="formSala">
+                    <label for="salasMod" class="labelSala">¿Cuantas personas sereis?</label>
+                    <select id="salasMod" name="salasMod" required>
+                        <option value="" disabled selected>Selecciona las personas</option>
+                        
+                    </select>
+                </div>
+                <div class="formFecha">
+                    <label for="fechaMod" class="labelFecha">¿Que fecha necesitas?</label>
+                    <input type="text" id="fechaMod" name="fechaMod" readonly required>
+                    <i class="fas fa-calendar-alt" id="iconoCalendarioMod"></i>
+                </div>
+                <div class="formHoraInicio">
+                    <label for="horaInicioMod" class="horaInicio">¿Cuando quieres comenzar?</label>
+                    <input type="text" id="horaInicioMod" placeholder="Selecciona la hora de inicio" name="horaInicioMod" required>
+                </div>
+                <div class="formHoraFin">
+                    <label for="horaFinMod" class="horaFin">¿Cuando quieres finalizar?</label>
+                    <input type="text" id="horaFinMod" placeholder="Selecciona la hora de finalización" name="horaFinMod" required>
+                </div>
+                <input type="hidden" id="reservaId" name="reservaId" value="">
+                <div class="botones">
+                    <button type="button" id="guardarCambios" >Guardar Cambios</button>
+                    <button type="button" onclick="cerrarModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="containerlogo">
+        <img src="/imagenes/Comfylogofooter.png" alt="logo" class="logo">
+    </div>
+    <div class="contacto">
+        <p>© 2024 ComfyCoworking. Todos los derechos reservados.</p>
+        <p class="email"><a href="mailto:ccoworking@gmail.com">ccoworking@gmail.com</a></p>
+    </div>
+    <div class="terminos">
+        <a href="/terminos">Términos y condiciones</a> |
+        <a href="/politica-privacidad" >Política de privacidad</a> | 
+        <a href="/contacto" >Contacto</a>  
+      </div>          
+</footer>
+</html>

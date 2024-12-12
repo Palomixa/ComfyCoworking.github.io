@@ -1,0 +1,188 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('/imagenes/consulta1.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+section {
+    flex: 1;
+    
+}
+nav{
+    max-width:100%;
+    
+    background-color:#e6cda8;
+    font-size: 19px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.listado{
+    list-style: none;
+    display: flex;
+    justify-content:space-around;
+    padding: 3px;
+    margin: 0;
+}
+
+.listado > li > a{
+    display: block;
+    padding: 15px 15px;
+    color:black;
+    text-decoration:none;
+           
+}
+.listado >li:hover {
+    background-color: #ceb084;
+    border-radius: 20px;
+}
+.Contenido{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: #e6cda896;
+    padding: 10px;
+    z-index: 9999;
+    border-radius: 20px;    
+}
+
+.listado li:hover .Contenido{
+    display: block;
+}
+
+
+.Contenido li:hover{
+    background-color: #ceb084;
+    border-radius: 20px;
+     
+}
+
+.listado li a{
+    display: block;
+    color:rgb(88, 71, 15);
+    padding: 15px 15px;
+    text-decoration: none;
+    justify-content: center;
+    
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+#tablaReservas {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    
+}
+
+#tablaReservas th{
+    padding: 10px;
+    text-align: left;
+    color: rgb(0, 0, 0); 
+}
+
+
+#tablaReservas td {
+    padding: 10px;
+    text-align: left;
+    color: rgb(0, 0, 0); 
+}
+
+#tablaReservas th {
+    background-color: rgba(168, 236, 149, 0.5);
+}
+
+#tablaReservas tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+#tablaReservas tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+#tablaReservas tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.iconoAccion {
+    cursor: pointer; 
+    padding: 8px; 
+    font-size: 17px; 
+    transition: all 0.3s ease;
+  }
+   
+  .iconoAccion:hover {
+    
+    color:#53db88;
+  }
+  
+  .celda-acciones i {
+    margin-right: 10px; 
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+  }
+  
+.contenidoModal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+  }
+  footer{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+}
+.containerlogo{
+    flex: 1;
+    text-align: left;
+}
+.logo{
+    width: 150px;  
+    margin-left: 90px;
+    
+}
+.contacto{
+  
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.terminos{
+ 
+    flex: 1;
+    text-align: right;
+    margin-top: 30px;
+    
+}

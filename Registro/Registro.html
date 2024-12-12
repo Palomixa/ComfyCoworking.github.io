@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Comfy Coworking</title>
+    <link rel="stylesheet" href="/Registro/RegistroEstilo.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <div class="Cuadro">
+        <h1>Resgistrate</h1>
+        <form class="registro" id="registro">
+          
+            <div class="cuadroTexto">
+                <label>
+                    <input type="text"  name="nombre" placeholder="Nombre" >
+                </label>      
+            </div>
+
+            <div class="cuadroTexto">
+                <label>
+                    <input type="text"  name="apellidos" placeholder="Apellidos" >
+                </label>
+            </div>
+
+            <div class="cuadroTexto">
+                <label>
+                    <input type="email"  name="email" placeholder="Email" >
+                </label>
+            </div>
+
+            <div class="cuadroTexto">
+                <label>
+                    <input type="password"  name="password" placeholder="Password">
+                </label>
+            </div>
+
+            <button type="submit" class="btn" id="btnRegistro">Registrarse</button>
+            <div class="alerta-error">Todos los campos son obligatorios.</div>
+            <div class="alerta-exito">Te registraste correctamente. Recibirás un email con la confirmación del registro.</div>
+            
+
+            <div class="linkRegistro">
+            <p id="warning">¿Ya estás registrado? <a href="/Login/Login.html">Inicia Sesión</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="/Registro/Registro.js"></script>
+</html>

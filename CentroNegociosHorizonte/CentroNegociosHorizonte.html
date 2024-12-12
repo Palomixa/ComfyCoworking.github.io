@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edificio Centro de Negocios Horizonte</title>
+    <script src="CentroNegociosHorizonte.js"defer></script>
+    <link rel="stylesheet" href="CentroNegociosHorizonte.css">
+</head>
+<body>
+    <nav id="bnavegacion">
+        <ul class="listado">
+            <li>
+                <a href="/Index/ComfyCoworking.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/nuevaReserva/nuevaReserva.html">Nueva Reserva</a>
+            </li>
+            <li>
+                <a href="/consultarReserva/consultarReserva.html">Consultar Reserva</a>     
+            </li>
+            <li>
+                <a>Ubicación</a>
+                <ul class="Contenido">
+                    <li><a href="/PrismaSalamanca/PrismaSalamanca.html">Edificio Prisma Salamanca</a></li>
+                    <li><a href="/TorreAvance/TorreAvance.html">Torre Avance</a></li>
+                    <li><a href="/CentroNegociosHorizonte/CentroNegociosHorizonte.html">Centro de negocios Horizonte</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="cerrarSesion();">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+    <div><h1>Centro de Negocios Horizonte</h1></div>
+    <section class="flex">
+       
+        <div id="salas" class="flex wrap col-6"></div>
+
+        <div id="detalles" class="col-6">      
+            <img id="imagen" src="/imagenes/CentroHorizonte1.jpg" alt="Imagen de la sala" width="560" height="315">
+            <h3 id="nombre"><strong>Nombre de la sala:</strong></h3>
+            <h3 id="capacidad"><strong>Capacidad:</strong> </h3>
+            <h3 id="ubicacion"><strong>Ubicación:</strong></h3>
+            
+        </div>
+    </section>
+</body>
+<footer>
+    <div class="containerlogo">
+        <img src="/imagenes/Comfylogofooter.png" alt="logo" class="logo">
+    </div>
+    <div class="contacto">
+        <p>© 2024 ComfyCoworking. Todos los derechos reservados.</p>
+        <p class="email"><a href="mailto:ccoworking@gmail.com">ccoworking@gmail.com</a></p>
+    </div>
+    <div class="terminos">
+        <a href="/terminos">Términos y condiciones</a> |
+        <a href="/politica-privacidad" >Política de privacidad</a> | 
+        <a href="/contacto" >Contacto</a>  
+      </div>          
+</footer>
+</html>

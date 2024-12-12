@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/imagenes/login4.jpg') center;
+    background-size: cover;
+    background-position: center;
+    
+}
+.Cuadro{
+    width: 420px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color:#93dfb0;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.Cuadro h1{
+    font-size: 36px;
+    text-align: center;
+}
+.Cuadro .cuadroTexto{
+    position:relative;
+    width: 100%;
+    height: 50px; 
+    margin: 35px 0;
+    
+}
+.cuadroTexto input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    
+}
+.registro div .alerta{
+    padding-top: 4px;
+    width: 270px;
+    text-align: left;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-size: .8rem;
+    color: #9d2222;
+}
+
+.registro > .alerta-error,
+.registro > .alerta-exito{
+    display: none;
+}
+.registro .error input{
+    outline: solid 2.5px #9d2222;
+   
+}
+
+.registro .alertaError{
+    display: block;
+    text-align: center;
+    padding: .5rem 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    color:#740f0f;
+}
+.registro .alertaExito{
+    text-align: center;
+    display: block;
+    padding: .5rem .1rem;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+.cuadroTexto input::placeholder{
+    color:#fff;
+}
+.cuadroTexto i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(1%);
+    font-size: 20px;
+}
+.Cuadro .recordarContraseña{
+    display:flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+.recordarContraseña label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+.recordarContraseña a{
+    color: #fff;
+    text-decoration: none;
+}
+.recordarContraseña a:hover{
+    text-decoration: underline;
+}
+.Cuadro .btn{
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.Cuadro .linkRegistro{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.linkRegistro p a{
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.linkRegistro p a:hover{
+    text-decoration: underline;
+}
+.btn:hover{
+    color: #93dfb0;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfy Coworking</title>
+    <link rel="stylesheet" href="/Index/ComfyEstilos.css">
+    <script src="/Index/ComfyCodigo.js"></script>
+    
+</head>
+<body onload="iniciar();">
+    <nav id="bnavegacion">
+        <ul class="listado">
+            <li>
+                <a href="/Index/ComfyCoworking.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/nuevaReserva/nuevaReserva.html">Nueva Reserva</a>
+            </li>
+            <li>
+                <a href="/consultarReserva/consultarReserva.html">Consultar Reserva</a>     
+            </li>
+            <li>
+                <a>Ubicación</a>
+                <ul class="Contenido">
+                    <li><a href="/PrismaSalamanca/PrismaSalamanca.html">Edificio Prisma Salamanca</a></li>
+                    <li><a href="/TorreAvance/TorreAvance.html">Torre Avance</a></li>
+                    <li><a href="/CentroNegociosHorizonte/CentroNegociosHorizonte.html">Centro de negocios Horizonte</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="cerrarSesion();">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="slider">
+        <div class="col-2"> 
+            <img src="/imagenes/puntas-de-flecha-izquierda.png" alt="Anterior" onclick="avanzar('atras');">
+        </div>
+        <div class="col-8">
+            <img class="imagen" src="" alt="Foto 1">
+            <img class="imagen" src="" alt="Foto 2">
+            <img class="imagen" src="" alt="Foto 3">
+            <img class="imagen" src="" alt="Foto 4">
+        </div>
+        <div class="col-2">
+            <img src="/imagenes/punta-de-flecha-derecha.png" alt="Siguiente" onclick="avanzar('adelante');">
+        </div>
+    </section>
+
+    <div class="col-12 flex">
+        <img src="/imagenes/FotoPortada3.jpg" alt="Punto 1" class="punto">
+        <img src="/imagenes/FotoPortada2.jpg" alt="Punto 2" class="punto">
+        <img src="/imagenes/FotoPortada1.jpg" alt="Punto 3" class="punto">
+        <img src="/imagenes/FotoPortada4.png" alt="Punto 4" class="punto">
+    </div>
+    <section class="cuadrosInfo">
+        <div class="cuadroTexto">
+            <h3>Flexibilidad horaria</h3>
+            <p>Puedes reservar desde </p>
+            <p>las 8 de la mañana</p>
+            <p>hasta las 9 de la noche</p> 
+        </div>
+        <div class="cuadroTexto">
+            <h3>Variedad de salas</h3>
+            <p>Salas desde 3 personas</p>
+            <p>hasta máximo 25 personas</p> 
+        </div>
+        <div class="cuadroTexto">
+            <h3>Tres ubicaciones excepcionales</h3>
+            <p>En pleno barrio de Salamanca</p>
+            <p>Calle Ayala, 25</p> 
+            <p>Calle Goya, 22</p> 
+            <p>Calle Don Ramón de la Cruz, 15</p> 
+        </div>
+    </section>
+</body>
+<footer>
+    <div class="containerlogo">
+        <img src="/imagenes/Comfylogofooter.png" alt="logo" class="logo">
+    </div>
+    <div class="contacto">
+        <p>© 2024 ComfyCoworking. Todos los derechos reservados.</p>
+        <p class="email"><a href="mailto:ccoworking@gmail.com">ccoworking@gmail.com</a></p>
+    </div>
+    <div class="terminos">
+        <a href="/terminos">Términos y condiciones</a> |
+        <a href="/politica-privacidad" >Política de privacidad</a> | 
+        <a href="/contacto" >Contacto</a>  
+      </div>          
+</footer>
+</html>

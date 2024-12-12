@@ -1,0 +1,173 @@
+body,html {
+    height: 100%;
+    background-color: rgb(192, 179, 161);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+nav{
+    max-width:none;
+    margin:auto;
+    background-color:#e6cda8;
+    font-size: 19px;
+    
+}
+.listado{
+    list-style: none;
+    display: flex;
+    justify-content:space-around;
+    padding: 3px;
+    margin: 0;
+}
+
+.listado > li > a{
+    display: block;
+    padding: 15px 15px;
+    color:black;
+    text-decoration:none;
+           
+}
+.listado >li:hover {
+    background-color: #ceb084;
+    border-radius: 20px;
+}
+.Contenido{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 220px;
+    background-color: #e6cda896;
+    padding: 10px;
+    z-index: 9999;
+    border-radius: 20px;    
+}
+
+.listado li:hover .Contenido{
+    display: block;
+}
+
+
+.Contenido li:hover{
+    background-color: #ceb084;
+    border-radius: 20px;
+     
+}
+
+.listado li a{
+    display: block;
+    color:rgb(88, 71, 15);
+    padding: 15px 15px;
+    text-decoration: none;
+    justify-content: center;
+    
+}
+h1{
+    margin: 50px;
+    text-align: center;
+    margin-bottom: 50px; 
+    font-family:Arial, Helvetica, sans-serif;
+    color: #6e5f3b;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    gap: 20px;  
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.col-4 {
+    width: 45%; 
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;    
+}
+
+.col-4 img {
+    border-radius: 6px; 
+    width: 70%;  
+    height: auto;
+    margin: 0 auto;  /
+}
+.col-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.col-6 {
+    width: 45%; 
+    margin-right: 30px;
+}
+
+
+img {
+    width: 100%;  
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+#detalles img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#salas {
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    gap: 30px;
+}
+
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    color:#634c39;
+}
+#ubicacion{
+    margin-bottom: 100px;
+}
+footer{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+}
+.containerlogo{
+    flex: 1;
+    text-align: left;
+}
+.logo{
+    width: 150px;  
+    margin-left: 90px;
+    
+}
+.contacto{
+  
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.terminos{
+ 
+    flex: 1;
+    text-align: right;
+    margin-top: 30px;
+    
+}

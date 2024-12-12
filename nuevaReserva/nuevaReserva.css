@@ -1,0 +1,264 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding-top: 170px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/imagenes/edificio4b.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    min-height: 100%;  
+}
+
+nav{
+    width: 100%;
+    margin:auto;
+    background-color:#e6cda8;
+    font-size: 19px;   
+    top: 0;
+    position: fixed;
+}
+.listado{
+    list-style: none;
+    display: flex;
+    justify-content:space-around;
+    padding: 3px;
+    margin: 0;
+}
+
+.listado > li > a{
+    display: block;
+    padding: 15px 15px;
+    color:black;
+    text-decoration:none;
+           
+}
+.listado >li:hover {
+    background-color: #ceb084;
+    border-radius: 20px;
+}
+.Contenido{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: #e6cda896;
+    padding: 10px;
+    z-index: 9999;
+    border-radius: 20px;    
+}
+
+.listado li:hover .Contenido{
+    display: block;
+}
+
+
+.Contenido li:hover{
+    background-color: #ceb084;
+    border-radius: 20px;
+     
+}
+
+.listado li a{
+    display: block;
+    color:rgb(88, 71, 15);
+    padding: 15px 15px;
+    text-decoration: none;
+    justify-content: center;
+    
+}
+.imagen img {
+    width: 1400px;
+    height: 450px;
+    display: block;
+    align-content: center;
+    margin: 10px 20px 20px 50px;
+}
+#formularioReserva{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin: 80px auto;
+    padding: 40px;
+    width: 530px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+    backdrop-filter: blur(80px);
+    
+}
+h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#caf1aa;
+}
+ .formEdificio,
+ .formSala,
+ .formFecha,
+ .formHoraInicio,
+ .formHoraFin {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: flex-start;  
+    padding: 12px;
+    
+}
+
+.labelEdificio,
+.labelSala,
+.labelFecha,
+.horaInicio,
+.horaFin {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    font-weight: 400; 
+    color: #000000;
+    width: 200px;  
+    margin-right:20px;
+    white-space: nowrap;
+}
+.labelFecha{
+    margin-left: 20px;
+}
+.edificios,
+#salas,
+#fecha,
+#horaInicio,
+#horaFin {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #bebaba;
+    background-color: #eaeaea;
+    color: #333;
+    width: 250px;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.edificios:focus,
+ #salas:focus,
+ #fecha:focus,
+ #horaInicio:focus,
+ #horaFin:focus {
+    border-color: #49b06b; 
+    border-width: 2px;
+    background-color: #f9f9f9;
+    outline: none;
+}
+
+.flatpickr-day.today {
+    font-weight: bold;
+    color: rgba(83, 219, 136, 0.9);
+}
+.flatpickr .flatpickr-day.selected {
+    border: 2px solid #53db88; 
+    background-color: #53db88; 
+    color: white; 
+}
+
+
+.flatpickr .flatpickr-day.today.selected {
+    border: 2px solid #ff5722; 
+    background-color: #ff5722; 
+    color: white;
+}
+    
+
+#fecha [readonly]{
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+}
+
+#iconoCalendario {
+    position: relative;
+    top: 10%;
+    right: 30px;
+    transform: translateY(-10%);
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+#iconoCalendario:hover {
+    color: rgba(83, 219, 136, 0.9);
+}
+
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #edfff4;
+    border-radius: 6px;
+    transition: all 0.2s ease;;
+    cursor: pointer;
+}
+button:hover {
+    color: #3a9751;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+}
+button:active{
+box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.botones{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+#formularioReserva.expanded {
+    width: fit-content;
+}
+#formularioReserva.expanded #resultado{
+    display: block;
+}
+#resultado{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    margin-top: 30px;
+    font-size: 17px;
+    color:#c9f7a5;
+    transition: all 0.3s ease;
+    text-align:left;
+}
+
+footer{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    margin-top: auto;
+}
+.containerlogo{
+    flex: 1;
+    text-align: left;
+}
+.logo{
+    width: 150px;  
+    margin-left: 90px;
+    
+}
+.contacto{
+  
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.terminos{
+ 
+    flex: 1;
+    text-align: right;
+    margin-top: 30px;
+    
+}

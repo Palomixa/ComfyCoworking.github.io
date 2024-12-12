@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Reserva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/l10n/es.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="nuevaReserva.css">
+    <script src="nuevaReserva.js" defer></script>
+</head>
+<body>
+    <nav id="bnavegacion">
+        <ul class="listado">
+            <li>
+                <a href="/Index/ComfyCoworking.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/nuevaReserva/nuevaReserva.html">Nueva Reserva</a>
+            </li>
+            <li>
+                <a href="/consultarReserva/consultarReserva.html">Consultar Reserva</a>     
+            </li>
+            <li>
+                <a>Ubicación</a>
+                <ul class="Contenido">
+                    <li><a href="/PrismaSalamanca/PrismaSalamanca.html">Edificio Prisma Salamanca</a></li>
+                    <li><a href="/TorreAvance/TorreAvance.html">Torre Avance</a></li>
+                    <li><a href="/CentroNegociosHorizonte/CentroNegociosHorizonte.html">Centro de negocios Horizonte</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="cerrarSesion();">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="formularioReserva"> 
+        <h1>Formulario de reservas</h1>
+                <div class="formEdificio">
+                    <label for="edificios" class="labelEdificio">¿Donde quieres trabajar hoy?</label>
+                    <select id="edificios" class="edificios" name="edificios" required>
+                        <option value="" disabled selected></option>
+                    </select>
+                    <p id="resultadoEdificios"></p>
+                </div>
+                      
+                <div class="formSala">
+                    <label for="salas" class="labelSala">¿Cuantas personas sereis?</label>
+                    <select id="salas" name="salas" required>
+                        <option value="" disabled selected></option>
+                    </select>
+                    <p id="resultadoSalas"></p>
+                </div>            
+            <div class="formFecha">
+                <label for="fecha" class="labelFecha">¿Que fecha necesitas?</label>
+                    <input type="text" id="fecha" name="fecha" readonly required>
+                    <i class="fas fa-calendar-alt" id="iconoCalendario"></i>
+                </div>          
+                <div class="formHoraInicio">
+                    <label for="horaInicio" class="horaInicio">¿Cuando quieres comenzar?</label>
+                    <input type="text" id="horaInicio" placeholder="Selecciona la hora de inicio" name="horaInicio" required>
+                     <p id="resultadoHoraInicio"></p>
+                </div>
+                <div class="formHoraFin">
+                    <label for="horaFin" class="horaFin">¿Cuando quieres finalizar?</label>
+                    <input type="text" id="horaFin" placeholder="Selecciona la hora de finalización" name="horaFin" required>
+                     <p id="resultadoHoraFin"></p>
+                </div>
+            </div>
+            <div class="botones">
+                <button onclick="reservar()">Reservar</button>
+                <button onclick="mostrarEleccion()">Mostrar selección</button>
+            </div>  
+            <div id="resultado"></div>   
+    </section>
+</body>
+<footer>
+    <div class="containerlogo">
+        <img src="/imagenes/Comfylogofooter.png" alt="logo" class="logo">
+    </div>
+    <div class="contacto">
+        <p>© 2024 ComfyCoworking. Todos los derechos reservados.</p>
+        <p class="email"><a href="mailto:ccoworking@gmail.com">ccoworking@gmail.com</a></p>
+    </div>
+    <div class="terminos">
+        <a href="/terminos">Términos y condiciones</a> |
+        <a href="/politica-privacidad" >Política de privacidad</a> | 
+        <a href="/contacto" >Contacto</a>  
+      </div>          
+</footer>
+</html>
