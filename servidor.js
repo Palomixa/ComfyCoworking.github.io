@@ -15,7 +15,10 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "http://127.0.0.1:5501",
+  origin:
+    process.env.NODE_ENV === "production"
+      ? "https://comfycoworking.onrender.com"
+      : "http://127.0.0.1:5501",
   allowedHeaders: ["Content-Type", "Authorization"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
