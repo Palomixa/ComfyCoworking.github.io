@@ -35,6 +35,9 @@ app.use(reservasRoutes);
 app.use(consultarReservaRoutes);
 app.use(modificarReservaRoutes);
 app.use(eliminarReservaRoutes);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "Indez", "index.html"));
+});
 
 const port = process.env.PORT || 5000;
 console.log("Servidor escuchando en el puerto", port);
