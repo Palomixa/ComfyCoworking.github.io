@@ -8,7 +8,6 @@ import reservasRoutes from "./routes/reservasRoutes.js";
 import modificarReservaRoutes from "./routes/modificarReservaRoutes.js";
 import consultarReservaRoutes from "./routes/consultaReservaRoutes.js";
 import eliminarReservaRoutes from "./routes/eliminarReservaRoutes.js";
-import { SERVER_PORT } from "./config/config.js";
 
 dotenv.config();
 
