@@ -46,6 +46,9 @@ app.use("/Login", express.static(path.join(__dirname, "Login")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+app.get("/Login", (req, res) => {
+  res.sendFile(path.join(__dirname, "Login", "login.html"));
+});
 
 const port = process.env.PORT || 5000;
 console.log("Servidor escuchando en el puerto", port);
