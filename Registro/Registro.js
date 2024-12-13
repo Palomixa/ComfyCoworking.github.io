@@ -127,9 +127,9 @@ function enviarFormulario() {
   };
 
   const url =
-    process.env.NODE_ENV === "production"
-      ? "https://comfycoworking.onrender.com/registro"
-      : "http://localhost:5000/registro";
+    window.location.hostname === "localhost"
+      ? "http://localhost:5000/registro"
+      : "https://comfycoworking.onrender.com/registro";
 
   fetch(url, {
     method: "POST",
