@@ -1,5 +1,4 @@
 import express from "express";
-import path from "path";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
@@ -36,9 +35,6 @@ app.use(reservasRoutes);
 app.use(consultarReservaRoutes);
 app.use(modificarReservaRoutes);
 app.use(eliminarReservaRoutes);
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "Index", "index.html"));
-});
 
 const port = process.env.PORT || 5000;
 console.log("Servidor escuchando en el puerto", port);
