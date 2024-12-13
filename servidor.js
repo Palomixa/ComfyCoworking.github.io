@@ -37,7 +37,9 @@ app.use(consultarReservaRoutes);
 app.use(modificarReservaRoutes);
 app.use(eliminarReservaRoutes);
 
-app.use(express.static(path.join(__dirname)));
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
