@@ -35,6 +35,7 @@ export const registro = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+  console.log("Login request received");
   const { email, password } = req.body;
   console.log("email:", email, "password:", password);
   try {

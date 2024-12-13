@@ -77,9 +77,14 @@ async function enviarFormulario() {
     const email = inputEmail.value;
     const password = inputPassword.value;
 
+    const baseURL =
+      process.env.NODE_ENV === "production"
+        ? "https://comfycoworking.onrender.com"
+        : "http://127.0.0.1:5000";
+
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/login",
+        `${baseURL}/login`,
         {
           email,
           password,
