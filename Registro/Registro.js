@@ -126,10 +126,12 @@ function enviarFormulario() {
     password: inputPassword.value,
   };
 
-  const url =
-    window.location.hostname === "localhost"
-      ? "http://localhost:5000/registro"
-      : "https://comfycoworking.onrender.com/registro";
+  const isProduction =
+    window.location.hostname === "comfycoworking.onrender.com";
+
+  const url = isProduction
+    ? "https://comfycoworking.onrender.com/registro"
+    : "http://localhost:5000/registro";
 
   fetch(url, {
     method: "POST",
@@ -137,7 +139,6 @@ function enviarFormulario() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(datosUsuario),
-    mode: "no-cors",
   })
     .then((response) => response.json())
     .then((data) => {
