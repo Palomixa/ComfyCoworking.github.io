@@ -23,6 +23,7 @@ const corsOptions = {
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
+console.log("NODE_ENV:", process.env.NODE_ENV);
 
 app.use(cors(corsOptions));
 
@@ -36,6 +37,8 @@ app.use(consultarReservaRoutes);
 app.use(modificarReservaRoutes);
 app.use(eliminarReservaRoutes);
 
-app.listen(SERVER_PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${SERVER_PORT}`);
+const port = process.env.PORT || SERVER_PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
