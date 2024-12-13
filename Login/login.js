@@ -79,7 +79,7 @@ async function enviarFormulario() {
 
     try {
       const response = await axios.post(
-        `https://comfycoworking.onrender.com/login`,
+        "http://127.0.0.1:5000/login",
         {
           email,
           password,
@@ -112,7 +112,7 @@ async function enviarFormulario() {
         alertaExito.textContent = "Inicio de sesion exitoso";
         alertaExito.classList.add("alertaExito");
         setTimeout(() => {
-          window.location.href = "/index/ComfyCoworking.html";
+          window.location.href = "/Principal/ComfyCoworking.html";
         }, 1500);
       } else {
         alertaError.textContent = data.error;
