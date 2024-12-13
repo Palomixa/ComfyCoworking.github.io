@@ -129,7 +129,7 @@ function enviarFormulario() {
   const url =
     window.location.hostname === "localhost"
       ? "http://localhost:5000/registro"
-      : "https://comfycoworking.onrender.com/registro";
+      : "https://comfycoworking.onrender.com/Registro";
 
   fetch(url, {
     method: "POST",
