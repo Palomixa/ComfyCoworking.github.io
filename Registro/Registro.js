@@ -126,7 +126,12 @@ function enviarFormulario() {
     password: inputPassword.value,
   };
 
-  fetch("http://localhost:5000/registro", {
+  const url =
+    process.env.NODE_ENV === "production"
+      ? "https://comfycoworking.onrender.com/registro"
+      : "http://localhost:5000/registro";
+
+  fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
