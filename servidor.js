@@ -37,6 +37,7 @@ app.use(modificarReservaRoutes);
 app.use(eliminarReservaRoutes);
 
 const port = process.env.PORT || 5000;
+console.log("Servidor escuchando en el puerto", port);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en el puerto ${port}`);
