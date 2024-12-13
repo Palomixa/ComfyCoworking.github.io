@@ -137,6 +137,7 @@ function enviarFormulario() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(datosUsuario),
+    mode: "no-cors",
   })
     .then((response) => response.json())
     .then((data) => {

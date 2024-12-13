@@ -15,10 +15,19 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin:
-    process.env.NODE_ENV === "production"
-      ? "https://comfycoworking.onrender.com"
-      : "http://127.0.0.1:5501",
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:5501",
+      "http://127.0.0.1:5501",
+      "https://comfycoworking.onrender.com",
+    ];
+
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   allowedHeaders: ["Content-Type", "Authorization"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
