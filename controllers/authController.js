@@ -5,6 +5,11 @@ import { enviarCorreoConfirmacion } from "../email/email.js";
 
 export const registro = async (req, res) => {
   const { nombre, apellidos, email, password } = req.body;
+  if (typeof password !== "string" || password.trim() === "") {
+    return res
+      .status(400)
+      .json({ error: "La contraseña debe ser una cadena de texto válida." });
+  }
   try {
     const usuarioExistente = await pool.query(
       'SELECT * FROM "Usuarios" WHERE "Email" = $1',
