@@ -11,13 +11,16 @@ if (!process.env.DATABASE_URL) {
 }
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  user: DB_USER,
+  host: DB_HOST,
+  database: DB_NAME,
+  password: DB_PASSWORD,
+  port: DB_PORT,
   ssl: {
     rejectUnauthorized: false,
   },
-  log: console.log,
+  sslmode: "prefer",
 });
-
 pool
   .connect()
   .then(() => {
