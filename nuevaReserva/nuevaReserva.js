@@ -226,6 +226,11 @@ function mostrarEleccion() {
   document.getElementById("resultado").innerHTML = resultado;
 }
 
+function formatearFecha(fechaStr) {
+  const [dia, mes, anio] = fechaStr.split("-");
+  return `${anio}-${mes}-${dia}`;
+}
+
 async function reservar() {
   function obtenerToken() {
     return localStorage.getItem("token");
@@ -258,7 +263,7 @@ async function reservar() {
   const selectEdificio = document.getElementById("edificios");
   const edificioId = selectEdificio.value;
   const capacidad = document.getElementById("salas").value;
-  const fecha = document.getElementById("fecha").value;
+  const fecha = formatearFecha(document.getElementById("fecha").value);
   const horaInicio = document.getElementById("horaInicio").value;
   const horaFin = document.getElementById("horaFin").value;
 
