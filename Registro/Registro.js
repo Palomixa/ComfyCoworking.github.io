@@ -118,7 +118,7 @@ function validarFormulario() {
   return true;
 }
 
-function enviarFormulario() {
+async function enviarFormulario() {
   const datosUsuario = {
     nombre: inputNombre.value,
     apellidos: inputApellidos.value,
@@ -134,35 +134,35 @@ function enviarFormulario() {
     ? "https://comfycoworking.onrender.com/registro"
     : "http://localhost:5000/registro";
 
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(datosUsuario),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.error) {
-        alertaError.classList.add("alertaError");
-        alertaError.textContent = data.error;
-        setTimeout(() => {
-          alertaError.classList.remove("alertaError");
-        }, 3000);
-      } else {
-        alertaExito.classList.add("alertaExito");
-        setTimeout(() => {
-          alertaExito.classList.remove("alertaExito");
-        }, 5000);
-        formRegistro.reset();
-      }
-    })
+  try {
+    const response = await axios.post(url, datosUsuario);
 
-    .catch((error) => {
+    const data = response.data;
+
+    if (data.error) {
       alertaError.classList.add("alertaError");
-      alertaError.textContent = "Error en la conexión con el servidor.";
+      alertaError.textContent = data.error;
       setTimeout(() => {
         alertaError.classList.remove("alertaError");
       }, 3000);
-    });
+    } else {
+      alertaExito.classList.add("alertaExito");
+      setTimeout(() => {
+        alertaExito.classList.remove("alertaExito");
+      }, 5000);
+      formRegistro.reset();
+    }
+  } catch (error) {
+    alertaError.classList.add("alertaError");
+
+    if (error.response) {
+      alertaError.textContent =
+        error.response.data.error || "Error en la conexión con el servidor.";
+    } else if (error.request) {
+      alertaError.textContent = "Error en la conexión con el servidor.";
+    }
+    setTimeout(() => {
+      alertaError.classList.remove("alertaError");
+    }, 3000);
+  }
 }
