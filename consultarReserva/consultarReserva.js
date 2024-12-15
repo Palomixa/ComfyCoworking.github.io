@@ -197,8 +197,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         const horaInicio = reserva.HoraInicio;
         const horaFin = reserva.HoraFin;
 
+        const isProduction =
+          window.location.hostname === "comfycoworking.onrender.com";
+
+        const url = isProduction
+          ? "https://comfycoworking.onrender.com/eliminarReserva"
+          : "http://localhost:5000/eliminarReserva";
+
         const response = await axios.post(
-          `http://localhost:5000/eliminarReserva`,
+          url,
           { reservaId, usuarioId, salaId, horaInicio, horaFin, fecha },
           {
             headers: {
@@ -265,8 +272,15 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   async function cargarEdificios() {
+    const isProduction =
+      window.location.hostname === "comfycoworking.onrender.com";
+
+    const url = isProduction
+      ? "https://comfycoworking.onrender.com/edificios"
+      : "http://localhost:5000/edificios";
+
     try {
-      const response = await axios.get("http://localhost:5000/edificios");
+      const response = await axios.get(url);
       const selectEdificio = document.getElementById("edificiosMod");
       selectEdificio.innerHTML = "";
 
@@ -282,10 +296,15 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   async function cargarSalas(edificioId) {
+    const isProduction =
+      window.location.hostname === "comfycoworking.onrender.com";
+
+    const url = isProduction
+      ? `https://comfycoworking.onrender.com/salas/${edificioId}`
+      : `http://localhost:5000/salas/${edificioId}`;
+
     try {
-      const response = await axios.get(
-        `http://localhost:5000/salas/${edificioId}`
-      );
+      const response = await axios.get(url);
       const selectSalas = document.getElementById("salasMod");
       selectSalas.innerHTML = "";
 
@@ -345,9 +364,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     const decoded = jwt_decode(token);
     const usuarioId = decoded.id;
 
+    const isProduction =
+      window.location.hostname === "comfycoworking.onrender.com";
+
+    const url = isProduction
+      ? "https://comfycoworking.onrender.com/consultarReserva"
+      : "http://localhost:5000/consultarReserva";
+
     try {
       const response = await axios.post(
-        `http://localhost:5000/consultarReserva`,
+        url,
         { usuarioId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -454,16 +480,19 @@ async function guardarCambios() {
   try {
     const token = obtenerToken();
 
-    const responseMod = await axios.post(
-      "http://localhost:5000/modificarReserva",
-      datosReserva,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const isProduction =
+      window.location.hostname === "comfycoworking.onrender.com";
+
+    const url = isProduction
+      ? "https://comfycoworking.onrender.com/modificarReserva"
+      : "http://localhost:5000/modificarReserva";
+
+    const responseMod = await axios.post(url, datosReserva, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     console.log("Token en el encabezado Authorization:", `Bearer ${token}`);
     console.log("Respuesta del servidor:", responseMod);
     console.log("Respuesta del servidor:", responseMod.data);
