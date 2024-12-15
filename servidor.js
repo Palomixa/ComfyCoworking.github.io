@@ -49,8 +49,6 @@ app.use(eliminarReservaRoutes);
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use("/imagenes", express.static(path.join(__dirname, "imagenes")));
-
 app.use("/Login", express.static(path.join(__dirname, "login")));
 
 app.get("/", (req, res) => {
@@ -59,6 +57,7 @@ app.get("/", (req, res) => {
 app.get("/Login", (req, res) => {
   res.sendFile(path.join(__dirname, "Login", "login.html"));
 });
+app.use("/imagenes", express.static(path.join(__dirname, "imagenes")));
 
 console.log("Servidor escuchando en el puerto", PORT);
 
