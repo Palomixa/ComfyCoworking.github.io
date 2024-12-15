@@ -44,5 +44,5 @@ function cargaTexto() {
 
 function cerrarSesion() {
   localStorage.removeItem("usuario");
-  window.location.href = "/Login/Login.html";
+  window.location.href = "/Login/login.html";
 }

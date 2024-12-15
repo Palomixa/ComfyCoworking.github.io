@@ -508,5 +508,5 @@ function formatearHora(hora) {
 
 function cerrarSesion() {
   localStorage.removeItem("token");
-  window.location.href = "/Login/Login.html";
+  window.location.href = "/Login/login.html";
 }
