@@ -17,7 +17,7 @@ function cargaTexto() {
 
         let foto = document.createElement("img");
         foto.src =
-          "https://comfycoworking.onrender.com/imagenes/" +
+          "ComfyCoworking/imagenes/" +
           salas[i].querySelector("foto").textContent;
 
         let nombreSala = document.createElement("h3");
