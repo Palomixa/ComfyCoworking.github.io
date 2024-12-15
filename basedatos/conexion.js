@@ -1,26 +1,23 @@
 import pkg from "pg";
-import dotenv from "dotenv";
 const { Pool } = pkg;
+import { config } from "dotenv";
+config();
 
-dotenv.config();
-
-if (!process.env.DATABASE_URL) {
+if (!DATABASE_URL) {
   console.error("Error: DATABASE_URL no está configurado correctamente.");
 } else {
-  console.log("Conexión a la base de datos usando:", process.env.DATABASE_URL);
+  console.log("Conexión a la base de datos usando:", DATABASE_URL);
 }
 
 const pool = new Pool({
-  user: DB_USER,
-  host: DB_HOST,
-  database: DB_NAME,
-  password: DB_PASSWORD,
-  port: DB_PORT,
+  connectionString: DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,
   },
-  sslmode: "prefer",
 });
+
+console.log(DATABASE_URL);
+
 pool
   .connect()
   .then(() => {

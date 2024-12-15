@@ -125,6 +125,7 @@ function enviarFormulario() {
     email: inputEmail.value,
     password: inputPassword.value,
   };
+  console.log(datosUsuario.password);
 
   const isProduction =
     window.location.hostname === "comfycoworking.onrender.com";

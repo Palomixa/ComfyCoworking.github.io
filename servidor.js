@@ -9,6 +9,7 @@ import reservasRoutes from "./routes/reservasRoutes.js";
 import modificarReservaRoutes from "./routes/modificarReservaRoutes.js";
 import consultarReservaRoutes from "./routes/consultaReservaRoutes.js";
 import eliminarReservaRoutes from "./routes/eliminarReservaRoutes.js";
+import { PORT } from "./config/config.js";
 
 dotenv.config();
 
@@ -59,9 +60,8 @@ app.get("/Login", (req, res) => {
   res.sendFile(path.join(__dirname, "Login", "login.html"));
 });
 
-const port = process.env.PORT || 5000;
-console.log("Servidor escuchando en el puerto", port);
+console.log("Servidor escuchando en el puerto", PORT);
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en el puerto ${port}`);
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
