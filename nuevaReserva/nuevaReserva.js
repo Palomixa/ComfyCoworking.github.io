@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.hostname === "comfycoworking.onrender.com";
 
   const urlEdificio = isProduction
-    ? `https://comfycoworking.onrender.com/edificios}`
+    ? `https://comfycoworking.onrender.com/edificios`
     : `http://localhost:5000/edificios`;
+
   axios
     .get(urlEdificio)
     .then((response) => {
@@ -34,16 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("El id del edificio es invalido");
       return;
     }
-
     const isProduction =
       window.location.hostname === "comfycoworking.onrender.com";
 
-    const url = isProduction
+    const urlSalaEdificio = isProduction
       ? `https://comfycoworking.onrender.com/salas/${edificioId}`
       : `http://localhost:5000/salas/${edificioId}`;
 
     axios
-      .get(url)
+      .get(urlSalaEdificio)
       .then((response) => {
         const selectSalas = document.getElementById("salas");
         selectSalas.innerHTML = "Selecciona la capacidad";
@@ -287,16 +287,16 @@ async function reservar() {
       };
 
       console.log("Datos de reserva a enviar al backend:", datosReserva);
-
-      const isProduction =
-        window.location.hostname === "comfycoworking.onrender.com";
-
-      const url = isProduction
-        ? "https://comfycoworking.onrender.com/reservas"
-        : "http://localhost:5000/reservas";
-
       if (verificarTokenExpirado()) {
         const token = obtenerToken();
+
+        const isProduction =
+          window.location.hostname === "comfycoworking.onrender.com";
+
+        const url = isProduction
+          ? `https://comfycoworking.onrender.com/reservas`
+          : `http://localhost:5000/reservas`;
+
         const response = await axios.post(url, datosReserva, {
           headers: {
             "Content-Type": "application/json",
@@ -332,14 +332,14 @@ async function reservar() {
 }
 
 function obtenerSalaId(edificioId, capacidad) {
+  const isProduction =
+    window.location.hostname === "comfycoworking.onrender.com";
+
+  const url = isProduction
+    ? `https://comfycoworking.onrender.com/salas/${edificioId}`
+    : `http://localhost:5000/salas/${edificioId}`;
+
   return new Promise((resolve, reject) => {
-    const isProduction =
-      window.location.hostname === "comfycoworking.onrender.com";
-
-    const url = isProduction
-      ? `https://comfycoworking.onrender.com/salas/${edificioId}`
-      : `http://localhost:5000/salas/${edificioId}`;
-
     axios
       .get(url)
       .then((response) => {
