@@ -2,9 +2,19 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import pool from "../models/basedatos.js";
 import { enviarCorreoConfirmacion } from "../email/email.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const registro = async (req, res) => {
   const { nombre, apellidos, email, password } = req.body;
+
+  console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
+  const contrasena = process.env.DB_PASSWORD.trim();
+  if (typeof contrasena !== "string") {
+    console.error("La contraseña no es una cadena.");
+  } else {
+    console.log("Contraseña válida:", contrasena);
+  }
 
   if (typeof password !== "string" || password.trim() === "") {
     return res
