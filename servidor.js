@@ -51,6 +51,8 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 app.use(express.static(__dirname));
 
+app.use("/imagenes", express.static(path.join(__dirname, "imagenes")));
+
 app.use("/Login", express.static(path.join(__dirname, "login")));
 
 app.get("/", (req, res) => {
