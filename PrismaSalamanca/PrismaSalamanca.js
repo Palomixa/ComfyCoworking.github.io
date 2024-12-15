@@ -16,7 +16,9 @@ function cargaTexto() {
         cartel.classList.add("col-4");
 
         let foto = document.createElement("img");
-        foto.src = "/imagenes/" + salas[i].querySelector("foto").textContent;
+        foto.src =
+          "https://comfycoworking.onrender.com/imagenes/" +
+          salas[i].querySelector("foto").textContent;
 
         let nombreSala = document.createElement("h3");
         nombreSala.innerText = salas[i].querySelector("nombre").textContent;

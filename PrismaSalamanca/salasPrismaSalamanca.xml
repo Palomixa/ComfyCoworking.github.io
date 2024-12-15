@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <salas>
       <sala>
-        <foto>imagenes/prismaSalamanca2.jpg</foto>
-        <foto_grande>imagenes/prismaSalamanca2.jpg</foto_grande>
+        <foto>prismaSalamanca2.jpg</foto>
+        <foto_grande>prismaSalamanca2.jpg</foto_grande>
         <nombre>Sala Talento</nombre>
         <capacidad>8 personas</capacidad>
         <ubicacion>Calle de Goya, 22, planta 6</ubicacion>
     </sala>
     <sala>
-        <foto>imagenes/prismaSalamanca5.jpg</foto>
-        <foto_grande>imagenes/prismaSalamanca5.jpg</foto_grande>
+        <foto>prismaSalamanca5.jpg</foto>
+        <foto_grande>prismaSalamanca5.jpg</foto_grande>
         <nombre>Sala Creatividad</nombre>
         <capacidad>5 personas</capacidad>
         <ubicacion>Calle de Goya, 22, planta 6</ubicacion>
