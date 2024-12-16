@@ -11,7 +11,7 @@ const alertaError = document.querySelector(".alerta-error");
 const alertaExito = document.querySelector(".alerta-exito");
 
 const nombreRegex = /^[a-zA-Z]{3,16}$/;
-const apellidosRegex = /^[a-zA-Z]{3,16}$/;
+const apellidosRegex = /^[a-zA-Z]{3,30}$/;
 const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const passwordRegex = /^[a-zA-Z0-9_.+-]{4,12}$/;
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     validarCampo(
       nombreRegex,
       inputNombre,
-      "El nombre debe contener de 3 a 16 caracteres, sólo puede contener letras."
+      "El nombre debe contener de 3 a 30 caracteres, sólo puede contener letras."
     );
   });
   inputApellidos.addEventListener("input", () => {
