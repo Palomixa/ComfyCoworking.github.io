@@ -75,72 +75,61 @@ h1{
     box-sizing: border-box;
 }
 
-.flex {
+.container {
     display: flex;
-    gap: 20px;  
     justify-content: space-between;
-    flex-wrap: wrap;
+    margin: 20px;
+    margin-bottom: 120px;
 }
 
+.columnaIzq {
+    width: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
 
-.col-4 {
-    width: 45%; 
-    padding: 10px;
+.sala {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
     text-align: center;
-    cursor: pointer;
-    border-radius: 6px;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;    
-}
-.col-4 img {
-    border-radius: 6px; 
-    width: 70%;  
-    height: auto;
-    margin: 0 auto;  /
-}
-.col-4:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.col-6 {
-    width: 45%; 
-    margin-right: 30px;
-}
-
-img {
-    width: 100%;  
-    height: auto;
+.imagenSala {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 200px;
     object-fit: cover;
-    border-radius: 6px;
 }
 
+.descripcion {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #5e4b16;
+}
 
-#detalles img {
-    max-width: 100%;
+.columnaDer {
+    width: 40%;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.imagenEdificio {
+    width: 100%;
+    max-width: 100%; 
     height: auto;
-    display: block;
-    margin: 0 auto;
+    border-radius: 8px;
+}
+.descripcionEdificio{
+    margin-top: 25px; 
+    font-size: 20px;
+    font-weight: 600;
+    color: #5e4b16;
+    margin-bottom: 20px;
 }
 
-#salas {
-    margin-left: 20px;
-    margin-top: 40px;
-    margin-bottom: 70px;
-    gap: 30px;
-}
-
-
-h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: Arial, sans-serif;
-    color:#634c39;
-}
-#ubicacion{
-    margin-bottom: 100px;
-}
 footer{
     background-color: white;
     padding: 10px;
