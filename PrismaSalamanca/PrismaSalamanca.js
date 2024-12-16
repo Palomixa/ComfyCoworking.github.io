@@ -16,7 +16,7 @@ function cargaTexto() {
         cartel.classList.add("col-4");
 
         let foto = document.createElement("img");
-        foto.src = "" + salas[i].querySelector("foto").textContent;
+        foto.src = "/imagenes/" + salas[i].querySelector("foto").textContent;
 
         let nombreSala = document.createElement("h3");
         nombreSala.innerText = salas[i].querySelector("nombre").textContent;
@@ -35,7 +35,7 @@ function cargaTexto() {
             "<span>Ubicación: </span>" +
             salas[i].querySelector("ubicacion").textContent;
           document.querySelector("#imagen").src =
-            "" + salas[i].querySelector("foto_grande").textContent;
+            "/imagenes/" + salas[i].querySelector("foto_grande").textContent;
         });
       }
     }

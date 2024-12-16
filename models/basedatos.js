@@ -1,4 +1,4 @@
-console.log("Script de conexión a la base de datos iniciado...");
+console.log("Conexión a la base de datos iniciada...");
 import pkg from "pg";
 import dotenv from "dotenv";
 import {
@@ -22,15 +22,5 @@ const pool = new Pool({
     rejectUnauthorized: false,
   },
 });
-
-console.log(
-  "Usuario:",
-  DB_USER,
-  "password:",
-  DB_PASSWORD,
-  DB_HOST,
-  DB_PORT,
-  DB_NAME
-);
 
 export default pool;
