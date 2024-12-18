@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   async function eliminarReserva(reserva) {
     console.log(reserva);
     console.log(reserva.ReservaId);
-    if (confirm("¿Estás seguro de que deseas elimina esta reservar?")) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta reserva?")) {
       try {
         const token = obtenerToken();
         if (!verificarTokenExpirado()) {
