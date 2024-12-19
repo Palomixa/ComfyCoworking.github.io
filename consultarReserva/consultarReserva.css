@@ -4,7 +4,6 @@ html, body {
     padding: 0;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -14,14 +13,12 @@ body {
     box-sizing: border-box;
 }
 
-
 section {
     flex: 1;
     
 }
 nav{
     max-width:100%;
-    
     background-color:#e6cda8;
     font-size: 19px;
     padding: 0;
